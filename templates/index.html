@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web chat</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+    <script>
+        var username = "{{ username }}";
+        console.log("Username:", username);
+    </script>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</head>
+<body>
+    <h1 id="welcomeMessage">Welcome, {{ username }}</h1>
+    <h2>MESSAGES</h2>
+    <div id="messages">
+        
+    </div>
+    
+    <div class="message-input-container">
+        <h3 for="message">{{ username }}:</h3><br>
+        <input type="text" id="message" placeholder="Message"><br>
+        <button id="sendBtn" type="submit">Send</button>
+    </div>
+</body>
+</html>
